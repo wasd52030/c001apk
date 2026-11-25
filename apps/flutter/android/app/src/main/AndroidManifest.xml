@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://android.com"
+    xmlns:tools="http://schemas.android.com/tools"
     package="app.awavenue.c001apk" >
 
     <uses-permission android:name="android.permission.INTERNET" />
