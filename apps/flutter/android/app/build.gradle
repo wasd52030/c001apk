@@ -40,7 +40,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "app.awavenue.c001apk"
+        // applicationId = "app.awavenue.c001apk"
+        applicationId = "app.haiyaa.sobel.c001apk"
         minSdk = 24
         targetSdk = 37
         versionCode = flutter.versionCode
