@@ -159,13 +159,14 @@ jobs:
   android-release:
     # Release (AOT) only: debug APKs embed Dart kernel and must not carry the private implementation as artifacts.
     name: Android signed release (${{ github.ref == 'refs/heads/test' && 'arm64-v8a' || 'three ABIs' }})
-    if: (github.event_name == 'workflow_dispatch' && inputs.android_release) || (github.event_name == 'push' && github.ref == 'refs/heads/test')
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.android_release)
     needs: checks
     runs-on: ubuntu-22.04
     timeout-minutes: 35
     env:
-      KEY_ALIAS: '秋风のとおり道'
-      EXPECTED_CERT_SHA256: 'EA385AFC82E19824EEA8A8868ED365DF03E9886BBBA33E47E1E04B43EC65CB67'
+      KEY_ALIAS: 'c001apk'
+      # EXPECTED_CERT_SHA256: 'EA385AFC82E19824EEA8A8868ED365DF03E9886BBBA33E47E1E04B43EC65CB67'
+      REVIA_KS_PASS: '123456'
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
